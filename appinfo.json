@@ -1,0 +1,55 @@
+{
+  "uuid": "a794473f-1fd7-4cb7-a926-52ce694724a0",
+  "shortName": "BigDotz",
+  "longName": "BigDotz",
+  "companyName": "MakeAwesomeHappen",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "sdkVersion": "3",
+    "targetPlatforms": ["aplite", "basalt"],
+    "watchapp": {
+      "watchface": true
+    },
+    "appKeys": {
+      "dummy": 0
+    },
+    "resources": {
+      "media": [
+        {
+          "type": "png",
+          "name": "IMG_BIG_2_NORM",
+          "file": "images/2.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_2_DARK",
+          "file": "images/2_dith.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_2_DARKEST",
+          "file": "images/2_dith_dark.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_3_NORM",
+          "file": "images/3.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_3_DARK",
+          "file": "images/3_dith.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_3_DARKEST",
+          "file": "images/3_dith_dark.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BIG_DIGIT_BLANK",
+          "file": "images/big_digit_blank.png"
+        }
+      ]
+    }
+  }
