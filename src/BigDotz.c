@@ -142,6 +142,66 @@ static void next_animation(struct segment* cur_digit, PropertyAnimation* cur_ani
   cur_digit->cur_anim_stage = (cur_digit->cur_anim_stage + 1);
 }
 
+static void handle_time_tick(struct tm* tick_time, TimeUnits units_changed) {
+
+  if(units_changed & MINUTE_UNIT) {
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Minute tick");
+
+    if (clock_is_24h_style())
+    {
+    }
+
+  }
+
+  //Make sure that the weather is refreshed at least hourly
+  if(units_changed & HOUR_UNIT) {
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Hour tick");
+  }
+
+}
+
+static void handle_battery(BatteryChargeState charge_state) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Handle Battery");
+}
+
+
+static void handle_bluetooth(bool connected) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Handle Bluetooth");
+  // if (bt_bitmap)
+  // {
+  //   gbitmap_destroy(bt_bitmap);
+  // }
+  // if (connected)
+  // {
+  //   bt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_BT_ON);
+  //
+  //   if (!bt_connected)
+  //   {
+  //     bt_connected = 1;
+  //     if (bt_vibrate)
+  //     {
+  //       vibes_double_pulse();
+  //     }
+  //   }
+  // }
+  // else
+  // {
+  //   bt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_ICON_CLEAR);
+  //   if (bt_connected)
+  //   {
+  //     bt_connected = 0;
+  //     if (bt_vibrate)
+  //     {
+  //       vibes_long_pulse();
+  //     }
+  //   }
+  // }
+  // APP_LOG(APP_LOG_LEVEL_DEBUG, "handle_bluetooth connected=%i", connected);
+  // bitmap_layer_set_bitmap(bt_layer, bt_bitmap);
+  // layer_mark_dirty(bitmap_layer_get_layer(bt_layer));
+}
+
+
 static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
@@ -171,6 +231,15 @@ static void main_window_load(Window *window) {
   TIME_SEGMENTS[1].new_value=3;
   TIME_SEGMENTS[1].cur_anim_stage=0;
   next_animation(&TIME_SEGMENTS[1], TIME_ANIMATIONS[1]);
+
+  time_t now = time(NULL);
+  struct tm *current_time = localtime(&now);
+  handle_time_tick(current_time, MINUTE_UNIT);
+  handle_battery(battery_state_service_peek());
+  handle_bluetooth(bluetooth_connection_service_peek());
+  tick_timer_service_subscribe(MINUTE_UNIT|HOUR_UNIT, &handle_time_tick);
+  battery_state_service_subscribe(&handle_battery);
+  bluetooth_connection_service_subscribe(&handle_bluetooth);
 }
 
 static void main_window_unload(Window *window) {

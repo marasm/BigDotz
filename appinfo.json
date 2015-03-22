@@ -23,12 +23,12 @@
         {
           "type": "png",
           "name": "IMG_BIG_2_DARK",
-          "file": "images/2_dith.png"
+          "file": "images/2_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_2_DARKEST",
-          "file": "images/2_dith_dark.png"
+          "file": "images/2_dkst.png"
         },
         {
           "type": "png",
@@ -38,17 +38,17 @@
         {
           "type": "png",
           "name": "IMG_BIG_3_DARK",
-          "file": "images/3_dith.png"
+          "file": "images/3_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_3_DARKEST",
-          "file": "images/3_dith_dark.png"
+          "file": "images/3_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_DIGIT_BLANK",
-          "file": "images/big_digit_blank.png"
+          "file": "images/hours_blank.png"
         }
       ]
     }
