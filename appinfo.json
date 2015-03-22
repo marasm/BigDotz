@@ -169,6 +169,161 @@
           "type": "png",
           "name": "IMG_BIG_DIGIT_BLANK",
           "file": "images/big_digit_blank.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_0_NORM",
+          "file": "images/m_0.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_0_DARK",
+          "file": "images/m_0_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_0_DARKEST",
+          "file": "images/m_0_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_1_NORM",
+          "file": "images/m_1.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_1_DARK",
+          "file": "images/m_1_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_1_DARKEST",
+          "file": "images/m_1_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_2_NORM",
+          "file": "images/m_2.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_2_DARK",
+          "file": "images/m_2_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_2_DARKEST",
+          "file": "images/m_2_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_3_NORM",
+          "file": "images/m_3.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_3_DARK",
+          "file": "images/m_3_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_3_DARKEST",
+          "file": "images/m_3_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_4_NORM",
+          "file": "images/m_4.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_4_DARK",
+          "file": "images/m_4_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_4_DARKEST",
+          "file": "images/m_4_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_5_NORM",
+          "file": "images/m_5.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_5_DARK",
+          "file": "images/m_5_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_5_DARKEST",
+          "file": "images/m_5_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_6_NORM",
+          "file": "images/m_6.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_6_DARK",
+          "file": "images/m_6_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_6_DARKEST",
+          "file": "images/m_6_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_7_NORM",
+          "file": "images/m_7.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_7_DARK",
+          "file": "images/m_7_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_7_DARKEST",
+          "file": "images/m_7_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_8_NORM",
+          "file": "images/m_8.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_8_DARK",
+          "file": "images/m_8_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_8_DARKEST",
+          "file": "images/m_8_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_9_NORM",
+          "file": "images/m_9.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_9_DARK",
+          "file": "images/m_9_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_9_DARKEST",
+          "file": "images/m_9_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_MED_DIGIT_BLANK",
+          "file": "images/medium_digit_blank.png"
         }
       ]
     }

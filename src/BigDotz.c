@@ -36,7 +36,17 @@ static const uint32_t DIGITS_NORM[] = {
   RESOURCE_ID_IMG_BIG_6_NORM,
   RESOURCE_ID_IMG_BIG_7_NORM,
   RESOURCE_ID_IMG_BIG_8_NORM,
-  RESOURCE_ID_IMG_BIG_9_NORM
+  RESOURCE_ID_IMG_BIG_9_NORM,
+  RESOURCE_ID_IMG_MED_0_NORM,
+  RESOURCE_ID_IMG_MED_1_NORM,
+  RESOURCE_ID_IMG_MED_2_NORM,
+  RESOURCE_ID_IMG_MED_3_NORM,
+  RESOURCE_ID_IMG_MED_4_NORM,
+  RESOURCE_ID_IMG_MED_5_NORM,
+  RESOURCE_ID_IMG_MED_6_NORM,
+  RESOURCE_ID_IMG_MED_7_NORM,
+  RESOURCE_ID_IMG_MED_8_NORM,
+  RESOURCE_ID_IMG_MED_9_NORM
 };
 static const uint32_t DIGITS_DARK[] = {
   RESOURCE_ID_IMG_BIG_0_DARK,
@@ -48,7 +58,17 @@ static const uint32_t DIGITS_DARK[] = {
   RESOURCE_ID_IMG_BIG_6_DARK,
   RESOURCE_ID_IMG_BIG_7_DARK,
   RESOURCE_ID_IMG_BIG_8_DARK,
-  RESOURCE_ID_IMG_BIG_9_DARK
+  RESOURCE_ID_IMG_BIG_9_DARK,
+  RESOURCE_ID_IMG_MED_0_DARK,
+  RESOURCE_ID_IMG_MED_1_DARK,
+  RESOURCE_ID_IMG_MED_2_DARK,
+  RESOURCE_ID_IMG_MED_3_DARK,
+  RESOURCE_ID_IMG_MED_4_DARK,
+  RESOURCE_ID_IMG_MED_5_DARK,
+  RESOURCE_ID_IMG_MED_6_DARK,
+  RESOURCE_ID_IMG_MED_7_DARK,
+  RESOURCE_ID_IMG_MED_8_DARK,
+  RESOURCE_ID_IMG_MED_9_DARK
 };
 static const uint32_t DIGITS_DARKEST[] = {
   RESOURCE_ID_IMG_BIG_0_DARKEST,
@@ -60,12 +80,23 @@ static const uint32_t DIGITS_DARKEST[] = {
   RESOURCE_ID_IMG_BIG_6_DARKEST,
   RESOURCE_ID_IMG_BIG_7_DARKEST,
   RESOURCE_ID_IMG_BIG_8_DARKEST,
-  RESOURCE_ID_IMG_BIG_9_DARKEST
+  RESOURCE_ID_IMG_BIG_9_DARKEST,
+  RESOURCE_ID_IMG_MED_0_DARKEST,
+  RESOURCE_ID_IMG_MED_1_DARKEST,
+  RESOURCE_ID_IMG_MED_2_DARKEST,
+  RESOURCE_ID_IMG_MED_3_DARKEST,
+  RESOURCE_ID_IMG_MED_4_DARKEST,
+  RESOURCE_ID_IMG_MED_5_DARKEST,
+  RESOURCE_ID_IMG_MED_6_DARKEST,
+  RESOURCE_ID_IMG_MED_7_DARKEST,
+  RESOURCE_ID_IMG_MED_8_DARKEST,
+  RESOURCE_ID_IMG_MED_9_DARKEST
 };
 typedef struct segment segment;
 struct segment{
   BitmapLayer *layer;
   GBitmap *bitmap;
+  int index_shift;
   int cur_value;
   int new_value;
   int cur_anim_stage;
@@ -74,6 +105,10 @@ struct segment{
 static segment TIME_SEGMENTS[4];
 static BitmapLayer* TIME_BITMAP_LAYERS[4];
 static PropertyAnimation* TIME_ANIMATIONS[4];
+
+static segment DATE_SEGMENTS[4];
+static BitmapLayer* DATE_BITMAP_LAYERS[4];
+static PropertyAnimation* DATE_ANIMATIONS[4];
 
 
 // Function prototype
@@ -122,25 +157,41 @@ static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_a
   switch(cur_segment->cur_anim_stage)
   {
     case 0:
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_NORM[cur_segment->cur_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_NORM[cur_segment->cur_value + cur_segment->index_shift]);
       break;
     case 1:
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARK[cur_segment->cur_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARK[cur_segment->cur_value + cur_segment->index_shift]);
       break;
     case 2:
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARKEST[cur_segment->cur_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARKEST[cur_segment->cur_value + cur_segment->index_shift]);
       break;
     case 3:
-      cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_BIG_DIGIT_BLANK);
+      switch(cur_segment->index_shift)
+      {
+        case 0: //BIG
+          cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_BIG_DIGIT_BLANK);
+          break;
+        case 10://MEDIUM
+          cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_MED_DIGIT_BLANK);
+          break;
+        case 20://SMALL
+          //cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_SML_DIGIT_BLANK);
+          break;
+        case 30://Day of week
+          //cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_DOW_BLANK);
+          break;
+        default:
+          break;
+      }
       break;
     case 4:
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARKEST[cur_segment->new_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARKEST[cur_segment->new_value + cur_segment->index_shift]);
       break;
     case 5:
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARK[cur_segment->new_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_DARK[cur_segment->new_value + cur_segment->index_shift]);
       break;
     default://done with animation for the segment
-      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_NORM[cur_segment->new_value]);
+      cur_segment->bitmap = gbitmap_create_with_resource(DIGITS_NORM[cur_segment->new_value + cur_segment->index_shift]);
       cur_segment->cur_anim_stage = -1;
       cur_segment->cur_value = cur_segment->new_value;
       break;
@@ -183,15 +234,28 @@ static void update_datetime_display(struct tm *current_time) {
   unsigned short display_hour = get_display_hour(current_time->tm_hour);
   TIME_SEGMENTS[0].layer=TIME_BITMAP_LAYERS[0];
   TIME_SEGMENTS[0].new_value=display_hour/10;
+  TIME_SEGMENTS[0].index_shift=0;
   TIME_SEGMENTS[0].cur_anim_stage=0;
   next_animation(&TIME_SEGMENTS[0], TIME_ANIMATIONS[0]);
 
   TIME_SEGMENTS[1].layer=TIME_BITMAP_LAYERS[1];
   TIME_SEGMENTS[1].new_value=display_hour%10;
+  TIME_SEGMENTS[1].index_shift=0;
   TIME_SEGMENTS[1].cur_anim_stage=0;
   next_animation(&TIME_SEGMENTS[1], TIME_ANIMATIONS[1]);
 
   //Minutes
+  TIME_SEGMENTS[2].layer=TIME_BITMAP_LAYERS[2];
+  TIME_SEGMENTS[2].new_value=current_time->tm_min/10;
+  TIME_SEGMENTS[2].index_shift=10;
+  TIME_SEGMENTS[2].cur_anim_stage=0;
+  next_animation(&TIME_SEGMENTS[2], TIME_ANIMATIONS[2]);
+
+  TIME_SEGMENTS[3].layer=TIME_BITMAP_LAYERS[3];
+  TIME_SEGMENTS[3].new_value=current_time->tm_min%10;
+  TIME_SEGMENTS[3].index_shift=10;
+  TIME_SEGMENTS[3].cur_anim_stage=0;
+  next_animation(&TIME_SEGMENTS[3], TIME_ANIMATIONS[3]);
 
 
   //***********************DATE****************************************
@@ -262,29 +326,14 @@ static void main_window_load(Window *window) {
   //setup the digit coordinates
   TIME_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(1,5,71,75));
   TIME_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(72,5,71,75));
-  TIME_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(1,80,52,75));
-  TIME_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(60,80,52,75));
+  TIME_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(41,87,52,75));
+  TIME_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(90,87,52,75));
 
   //add all layers to window
   layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[0]));
   layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[1]));
   layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[2]));
   layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[3]));
-
-  //TEST Code
-  // TIME_SEGMENTS[0].layer=TIME_BITMAP_LAYERS[0];
-  // TIME_SEGMENTS[0].bitmap=NULL;
-  // TIME_SEGMENTS[0].cur_value=0;
-  // TIME_SEGMENTS[0].new_value=1;
-  // TIME_SEGMENTS[0].cur_anim_stage=0;
-  // next_animation(&TIME_SEGMENTS[0], TIME_ANIMATIONS[0]);
-  //
-  // TIME_SEGMENTS[1].layer=TIME_BITMAP_LAYERS[1];
-  // TIME_SEGMENTS[1].bitmap=NULL;
-  // TIME_SEGMENTS[1].cur_value=4;
-  // TIME_SEGMENTS[1].new_value=5;
-  // TIME_SEGMENTS[1].cur_anim_stage=0;
-  // next_animation(&TIME_SEGMENTS[1], TIME_ANIMATIONS[1]);
 
   // Avoids a blank screen on watch start.
   time_t now = time(NULL);
