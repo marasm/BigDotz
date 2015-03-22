@@ -1,3 +1,3 @@
 pebble build
 
-pebble install --emulator aplite $@ 
+pebble install --emulator basalt $@ 
