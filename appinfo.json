@@ -18,157 +18,157 @@
         {
           "type": "png",
           "name": "IMG_BIG_0_NORM",
-          "file": "images/0.png"
+          "file": "images/b_0.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_0_DARK",
-          "file": "images/0_dk.png"
+          "file": "images/b_0_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_0_DARKEST",
-          "file": "images/0_dkst.png"
+          "file": "images/b_0_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_1_NORM",
-          "file": "images/1.png"
+          "file": "images/b_1.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_1_DARK",
-          "file": "images/1_dk.png"
+          "file": "images/b_1_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_1_DARKEST",
-          "file": "images/1_dkst.png"
+          "file": "images/b_1_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_2_NORM",
-          "file": "images/2.png"
+          "file": "images/b_2.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_2_DARK",
-          "file": "images/2_dk.png"
+          "file": "images/b_2_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_2_DARKEST",
-          "file": "images/2_dkst.png"
+          "file": "images/b_2_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_3_NORM",
-          "file": "images/3.png"
+          "file": "images/b_3.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_3_DARK",
-          "file": "images/3_dk.png"
+          "file": "images/b_3_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_3_DARKEST",
-          "file": "images/3_dkst.png"
+          "file": "images/b_3_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_4_NORM",
-          "file": "images/4.png"
+          "file": "images/b_4.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_4_DARK",
-          "file": "images/4_dk.png"
+          "file": "images/b_4_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_4_DARKEST",
-          "file": "images/4_dkst.png"
+          "file": "images/b_4_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_5_NORM",
-          "file": "images/5.png"
+          "file": "images/b_5.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_5_DARK",
-          "file": "images/5_dk.png"
+          "file": "images/b_5_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_5_DARKEST",
-          "file": "images/5_dkst.png"
+          "file": "images/b_5_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_6_NORM",
-          "file": "images/6.png"
+          "file": "images/b_6.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_6_DARK",
-          "file": "images/6_dk.png"
+          "file": "images/b_6_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_6_DARKEST",
-          "file": "images/6_dkst.png"
+          "file": "images/b_6_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_7_NORM",
-          "file": "images/7.png"
+          "file": "images/b_7.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_7_DARK",
-          "file": "images/7_dk.png"
+          "file": "images/b_7_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_7_DARKEST",
-          "file": "images/7_dkst.png"
+          "file": "images/b_7_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_8_NORM",
-          "file": "images/8.png"
+          "file": "images/b_8.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_8_DARK",
-          "file": "images/8_dk.png"
+          "file": "images/b_8_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_8_DARKEST",
-          "file": "images/8_dkst.png"
+          "file": "images/b_8_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_9_NORM",
-          "file": "images/9.png"
+          "file": "images/b_9.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_9_DARK",
-          "file": "images/9_dk.png"
+          "file": "images/b_9_dk.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_9_DARKEST",
-          "file": "images/9_dkst.png"
+          "file": "images/b_9_dkst.png"
         },
         {
           "type": "png",
           "name": "IMG_BIG_DIGIT_BLANK",
-          "file": "images/hours_blank.png"
+          "file": "images/big_digit_blank.png"
         }
       ]
     }
