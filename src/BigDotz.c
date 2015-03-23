@@ -384,7 +384,14 @@ static void handle_battery(BatteryChargeState charge_state) {
   if (battery_bitmap) {
     gbitmap_destroy(battery_bitmap);
   }
-  battery_bitmap = gbitmap_create_with_resource(BATTERY[charge_state.charge_percent/10]);
+  if (charge_state.is_charging || charge_state.is_plugged) {
+
+    battery_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_BAT_CHG);
+  }
+  else
+  {
+    battery_bitmap = gbitmap_create_with_resource(BATTERY[charge_state.charge_percent/10]);
+  }
   bitmap_layer_set_bitmap(battery_bitmap_layer, battery_bitmap);
   layer_mark_dirty(bitmap_layer_get_layer(battery_bitmap_layer));
 }

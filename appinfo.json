@@ -626,6 +626,11 @@
           "type": "png",
           "name": "IMG_BAT_100",
           "file": "images/bat_100.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_BAT_CHG",
+          "file": "images/bat_chg.png"
         }
       ]
     }
