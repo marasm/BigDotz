@@ -143,6 +143,20 @@ static const uint32_t DIGITS_DARKEST[] = {
   RESOURCE_ID_IMG_DOW_FRI_DARKEST,
   RESOURCE_ID_IMG_DOW_SAT_DARKEST
 };
+
+static const uint32_t BATTERY[] = {
+  RESOURCE_ID_IMG_BAT_0,
+  RESOURCE_ID_IMG_BAT_20,
+  RESOURCE_ID_IMG_BAT_40,
+  RESOURCE_ID_IMG_BAT_40,
+  RESOURCE_ID_IMG_BAT_60,
+  RESOURCE_ID_IMG_BAT_60,
+  RESOURCE_ID_IMG_BAT_80,
+  RESOURCE_ID_IMG_BAT_80,
+  RESOURCE_ID_IMG_BAT_100,
+  RESOURCE_ID_IMG_BAT_100,
+};
+
 typedef struct segment segment;
 struct segment{
   BitmapLayer *layer;
@@ -164,6 +178,10 @@ static PropertyAnimation* DATE_ANIMATIONS[4];
 static segment dow_segment;
 static BitmapLayer* dow_bitmap_layer;
 static PropertyAnimation* dow_animation;
+
+static BitmapLayer* battery_bitmap_layer;
+static GBitmap* battery_bitmap;
+
 
 // Function prototype
 static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_animation);
@@ -361,6 +379,12 @@ static void handle_time_tick(struct tm* tick_time, TimeUnits units_changed) {
 
 static void handle_battery(BatteryChargeState charge_state) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Handle Battery");
+  if (battery_bitmap) {
+    gbitmap_destroy(battery_bitmap);
+  }
+  battery_bitmap = gbitmap_create_with_resource(BATTERY[charge_state.charge_percent/10]);
+  bitmap_layer_set_bitmap(battery_bitmap_layer, battery_bitmap);
+  layer_mark_dirty(bitmap_layer_get_layer(battery_bitmap_layer));
 }
 
 
@@ -410,13 +434,16 @@ static void main_window_load(Window *window) {
   TIME_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(72,6,71,75));
   TIME_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(41,88,52,75));
   TIME_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(90,88,52,75));
-  //date
-  DATE_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(8,110,9,11));
-  DATE_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(17,110,9,11));
-  DATE_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(21,123,9,11));
-  DATE_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(30,123,9,11));
   //dow
-  dow_bitmap_layer = bitmap_layer_create(GRect(8,93,33,15));
+  dow_bitmap_layer = bitmap_layer_create(GRect(8,96,33,15));
+  //date
+  DATE_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(8,113,9,11));
+  DATE_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(17,113,9,11));
+  DATE_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(21,126,9,11));
+  DATE_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(30,126,9,11));
+
+  //battery
+  battery_bitmap_layer = bitmap_layer_create(GRect(8,143,35,11));
 
   //add all layers to window
   for (int i = 0; i < 4; i++){
@@ -426,6 +453,7 @@ static void main_window_load(Window *window) {
     layer_add_child(window_layer, bitmap_layer_get_layer(DATE_BITMAP_LAYERS[i]));
   }
   layer_add_child(window_layer, bitmap_layer_get_layer(dow_bitmap_layer));
+  layer_add_child(window_layer, bitmap_layer_get_layer(battery_bitmap_layer));
 
   // Avoids a blank screen on watch start.
   time_t now = time(NULL);
