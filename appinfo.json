@@ -16,6 +16,12 @@
     "resources": {
       "media": [
         {
+            "file": "images/app_icon.png",
+            "menuIcon": true,
+            "name": "IMAGE_MENU_ICON",
+            "type": "png"
+        },
+        {
           "type": "png",
           "name": "IMG_BIG_0_NORM",
           "file": "images/b_0.png"
