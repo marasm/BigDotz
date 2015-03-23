@@ -182,6 +182,8 @@ static PropertyAnimation* dow_animation;
 static BitmapLayer* battery_bitmap_layer;
 static GBitmap* battery_bitmap;
 
+static bool bt_connected = 1;
+
 
 // Function prototype
 static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_animation);
@@ -390,38 +392,24 @@ static void handle_battery(BatteryChargeState charge_state) {
 
 static void handle_bluetooth(bool connected) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Handle Bluetooth");
-  // if (bt_bitmap)
-  // {
-  //   gbitmap_destroy(bt_bitmap);
-  // }
-  // if (connected)
-  // {
-  //   bt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_BT_ON);
-  //
-  //   if (!bt_connected)
-  //   {
-  //     bt_connected = 1;
-  //     if (bt_vibrate)
-  //     {
-  //       vibes_double_pulse();
-  //     }
-  //   }
-  // }
-  // else
-  // {
-  //   bt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_ICON_CLEAR);
-  //   if (bt_connected)
-  //   {
-  //     bt_connected = 0;
-  //     if (bt_vibrate)
-  //     {
-  //       vibes_long_pulse();
-  //     }
-  //   }
-  // }
-  // APP_LOG(APP_LOG_LEVEL_DEBUG, "handle_bluetooth connected=%i", connected);
-  // bitmap_layer_set_bitmap(bt_layer, bt_bitmap);
-  // layer_mark_dirty(bitmap_layer_get_layer(bt_layer));
+  if (connected)
+  {
+
+    if (!bt_connected)
+    {
+      bt_connected = 1;
+      vibes_double_pulse();
+    }
+  }
+  else
+  {
+    if (bt_connected)
+    {
+      bt_connected = 0;
+      vibes_long_pulse();
+    }
+  }
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "handle_bluetooth connected=%i", connected);
 }
 
 
