@@ -253,7 +253,7 @@ static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_a
           cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_SML_DIGIT_BLANK);
           break;
         case 30://Day of week
-          //cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_DOW_BLANK);
+          cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_DOW_BLANK);
           break;
         default:
           break;
