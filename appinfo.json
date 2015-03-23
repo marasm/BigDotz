@@ -325,6 +325,272 @@
           "name": "IMG_MED_DIGIT_BLANK",
           "file": "images/medium_digit_blank.png"
         }
+        ,
+        {
+          "type": "png",
+          "name": "IMG_SML_0_NORM",
+          "file": "images/s_0.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_0_DARK",
+          "file": "images/s_0_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_0_DARKEST",
+          "file": "images/s_0_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_1_NORM",
+          "file": "images/s_1.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_1_DARK",
+          "file": "images/s_1_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_1_DARKEST",
+          "file": "images/s_1_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_2_NORM",
+          "file": "images/s_2.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_2_DARK",
+          "file": "images/s_2_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_2_DARKEST",
+          "file": "images/s_2_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_3_NORM",
+          "file": "images/s_3.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_3_DARK",
+          "file": "images/s_3_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_3_DARKEST",
+          "file": "images/s_3_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_4_NORM",
+          "file": "images/s_4.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_4_DARK",
+          "file": "images/s_4_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_4_DARKEST",
+          "file": "images/s_4_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_5_NORM",
+          "file": "images/s_5.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_5_DARK",
+          "file": "images/s_5_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_5_DARKEST",
+          "file": "images/s_5_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_6_NORM",
+          "file": "images/s_6.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_6_DARK",
+          "file": "images/s_6_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_6_DARKEST",
+          "file": "images/s_6_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_7_NORM",
+          "file": "images/s_7.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_7_DARK",
+          "file": "images/s_7_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_7_DARKEST",
+          "file": "images/s_7_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_8_NORM",
+          "file": "images/s_8.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_8_DARK",
+          "file": "images/s_8_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_8_DARKEST",
+          "file": "images/s_8_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_9_NORM",
+          "file": "images/s_9.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_9_DARK",
+          "file": "images/s_9_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_9_DARKEST",
+          "file": "images/s_9_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_SML_DIGIT_BLANK",
+          "file": "images/small_digit_blank.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_MON_NORM",
+          "file": "images/dow_mon.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_MON_DARK",
+          "file": "images/dow_mon_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_MON_DARKEST",
+          "file": "images/dow_mon_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_TUE_NORM",
+          "file": "images/dow_tue.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_TUE_DARK",
+          "file": "images/dow_tue_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_TUE_DARKEST",
+          "file": "images/dow_tue_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_WED_NORM",
+          "file": "images/dow_wed.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_WED_DARK",
+          "file": "images/dow_wed_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_WED_DARKEST",
+          "file": "images/dow_wed_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_THU_NORM",
+          "file": "images/dow_thu.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_THU_DARK",
+          "file": "images/dow_thu_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_THU_DARKEST",
+          "file": "images/dow_thu_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_FRI_NORM",
+          "file": "images/dow_fri.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_FRI_DARK",
+          "file": "images/dow_fri_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_FRI_DARKEST",
+          "file": "images/dow_fri_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SAT_NORM",
+          "file": "images/dow_sat.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SAT_DARK",
+          "file": "images/dow_sat_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SAT_DARKEST",
+          "file": "images/dow_sat_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SUN_NORM",
+          "file": "images/dow_SUN.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SUN_DARK",
+          "file": "images/dow_sun_dk.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_SUN_DARKEST",
+          "file": "images/dow_sun_dkst.png"
+        },
+        {
+          "type": "png",
+          "name": "IMG_DOW_BLANK",
+          "file": "images/dow_blank.png"
+        }
       ]
     }
   }

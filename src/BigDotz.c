@@ -27,7 +27,7 @@ static const bool is_color_supported = 0;
 static Window *s_main_window;
 
 static const uint32_t DIGITS_NORM[] = {
-  RESOURCE_ID_IMG_BIG_0_NORM,
+  RESOURCE_ID_IMG_BIG_0_NORM,//Big Digits
   RESOURCE_ID_IMG_BIG_1_NORM,
   RESOURCE_ID_IMG_BIG_2_NORM,
   RESOURCE_ID_IMG_BIG_3_NORM,
@@ -37,7 +37,7 @@ static const uint32_t DIGITS_NORM[] = {
   RESOURCE_ID_IMG_BIG_7_NORM,
   RESOURCE_ID_IMG_BIG_8_NORM,
   RESOURCE_ID_IMG_BIG_9_NORM,
-  RESOURCE_ID_IMG_MED_0_NORM,
+  RESOURCE_ID_IMG_MED_0_NORM,//Medium Digits
   RESOURCE_ID_IMG_MED_1_NORM,
   RESOURCE_ID_IMG_MED_2_NORM,
   RESOURCE_ID_IMG_MED_3_NORM,
@@ -46,10 +46,27 @@ static const uint32_t DIGITS_NORM[] = {
   RESOURCE_ID_IMG_MED_6_NORM,
   RESOURCE_ID_IMG_MED_7_NORM,
   RESOURCE_ID_IMG_MED_8_NORM,
-  RESOURCE_ID_IMG_MED_9_NORM
+  RESOURCE_ID_IMG_MED_9_NORM,
+  RESOURCE_ID_IMG_SML_0_NORM,//SMALL Digits
+  RESOURCE_ID_IMG_SML_1_NORM,
+  RESOURCE_ID_IMG_SML_2_NORM,
+  RESOURCE_ID_IMG_SML_3_NORM,
+  RESOURCE_ID_IMG_SML_4_NORM,
+  RESOURCE_ID_IMG_SML_5_NORM,
+  RESOURCE_ID_IMG_SML_6_NORM,
+  RESOURCE_ID_IMG_SML_7_NORM,
+  RESOURCE_ID_IMG_SML_8_NORM,
+  RESOURCE_ID_IMG_SML_9_NORM,
+  RESOURCE_ID_IMG_DOW_SUN_NORM,//DOW
+  RESOURCE_ID_IMG_DOW_MON_NORM,
+  RESOURCE_ID_IMG_DOW_TUE_NORM,
+  RESOURCE_ID_IMG_DOW_WED_NORM,
+  RESOURCE_ID_IMG_DOW_THU_NORM,
+  RESOURCE_ID_IMG_DOW_FRI_NORM,
+  RESOURCE_ID_IMG_DOW_SAT_NORM
 };
 static const uint32_t DIGITS_DARK[] = {
-  RESOURCE_ID_IMG_BIG_0_DARK,
+  RESOURCE_ID_IMG_BIG_0_DARK,//Big Digits
   RESOURCE_ID_IMG_BIG_1_DARK,
   RESOURCE_ID_IMG_BIG_2_DARK,
   RESOURCE_ID_IMG_BIG_3_DARK,
@@ -59,7 +76,7 @@ static const uint32_t DIGITS_DARK[] = {
   RESOURCE_ID_IMG_BIG_7_DARK,
   RESOURCE_ID_IMG_BIG_8_DARK,
   RESOURCE_ID_IMG_BIG_9_DARK,
-  RESOURCE_ID_IMG_MED_0_DARK,
+  RESOURCE_ID_IMG_MED_0_DARK,//Medium Digits
   RESOURCE_ID_IMG_MED_1_DARK,
   RESOURCE_ID_IMG_MED_2_DARK,
   RESOURCE_ID_IMG_MED_3_DARK,
@@ -68,10 +85,27 @@ static const uint32_t DIGITS_DARK[] = {
   RESOURCE_ID_IMG_MED_6_DARK,
   RESOURCE_ID_IMG_MED_7_DARK,
   RESOURCE_ID_IMG_MED_8_DARK,
-  RESOURCE_ID_IMG_MED_9_DARK
+  RESOURCE_ID_IMG_MED_9_DARK,
+  RESOURCE_ID_IMG_SML_0_DARK,//Small Digits
+  RESOURCE_ID_IMG_SML_1_DARK,
+  RESOURCE_ID_IMG_SML_2_DARK,
+  RESOURCE_ID_IMG_SML_3_DARK,
+  RESOURCE_ID_IMG_SML_4_DARK,
+  RESOURCE_ID_IMG_SML_5_DARK,
+  RESOURCE_ID_IMG_SML_6_DARK,
+  RESOURCE_ID_IMG_SML_7_DARK,
+  RESOURCE_ID_IMG_SML_8_DARK,
+  RESOURCE_ID_IMG_SML_9_DARK,
+  RESOURCE_ID_IMG_DOW_SUN_DARK,//DOW
+  RESOURCE_ID_IMG_DOW_MON_DARK,
+  RESOURCE_ID_IMG_DOW_TUE_DARK,
+  RESOURCE_ID_IMG_DOW_WED_DARK,
+  RESOURCE_ID_IMG_DOW_THU_DARK,
+  RESOURCE_ID_IMG_DOW_FRI_DARK,
+  RESOURCE_ID_IMG_DOW_SAT_DARK
 };
 static const uint32_t DIGITS_DARKEST[] = {
-  RESOURCE_ID_IMG_BIG_0_DARKEST,
+  RESOURCE_ID_IMG_BIG_0_DARKEST,//Big Digits
   RESOURCE_ID_IMG_BIG_1_DARKEST,
   RESOURCE_ID_IMG_BIG_2_DARKEST,
   RESOURCE_ID_IMG_BIG_3_DARKEST,
@@ -81,7 +115,7 @@ static const uint32_t DIGITS_DARKEST[] = {
   RESOURCE_ID_IMG_BIG_7_DARKEST,
   RESOURCE_ID_IMG_BIG_8_DARKEST,
   RESOURCE_ID_IMG_BIG_9_DARKEST,
-  RESOURCE_ID_IMG_MED_0_DARKEST,
+  RESOURCE_ID_IMG_MED_0_DARKEST,//Medium Digits
   RESOURCE_ID_IMG_MED_1_DARKEST,
   RESOURCE_ID_IMG_MED_2_DARKEST,
   RESOURCE_ID_IMG_MED_3_DARKEST,
@@ -90,7 +124,24 @@ static const uint32_t DIGITS_DARKEST[] = {
   RESOURCE_ID_IMG_MED_6_DARKEST,
   RESOURCE_ID_IMG_MED_7_DARKEST,
   RESOURCE_ID_IMG_MED_8_DARKEST,
-  RESOURCE_ID_IMG_MED_9_DARKEST
+  RESOURCE_ID_IMG_MED_9_DARKEST,
+  RESOURCE_ID_IMG_SML_0_DARKEST,//Small Digits
+  RESOURCE_ID_IMG_SML_1_DARKEST,
+  RESOURCE_ID_IMG_SML_2_DARKEST,
+  RESOURCE_ID_IMG_SML_3_DARKEST,
+  RESOURCE_ID_IMG_SML_4_DARKEST,
+  RESOURCE_ID_IMG_SML_5_DARKEST,
+  RESOURCE_ID_IMG_SML_6_DARKEST,
+  RESOURCE_ID_IMG_SML_7_DARKEST,
+  RESOURCE_ID_IMG_SML_8_DARKEST,
+  RESOURCE_ID_IMG_SML_9_DARKEST,
+  RESOURCE_ID_IMG_DOW_SUN_DARKEST,//DOW
+  RESOURCE_ID_IMG_DOW_MON_DARKEST,
+  RESOURCE_ID_IMG_DOW_TUE_DARKEST,
+  RESOURCE_ID_IMG_DOW_WED_DARKEST,
+  RESOURCE_ID_IMG_DOW_THU_DARKEST,
+  RESOURCE_ID_IMG_DOW_FRI_DARKEST,
+  RESOURCE_ID_IMG_DOW_SAT_DARKEST
 };
 typedef struct segment segment;
 struct segment{
@@ -110,6 +161,9 @@ static segment DATE_SEGMENTS[4];
 static BitmapLayer* DATE_BITMAP_LAYERS[4];
 static PropertyAnimation* DATE_ANIMATIONS[4];
 
+static segment dow_segment;
+static BitmapLayer* dow_bitmap_layer;
+static PropertyAnimation* dow_animation;
 
 // Function prototype
 static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_animation);
@@ -143,7 +197,8 @@ static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_a
     cur_segment->cur_value = 0;
   }
 
-  if (cur_segment->cur_value == cur_segment->new_value)
+  //if new == current and bitmap not null => skip
+  if (cur_segment->cur_value == cur_segment->new_value && cur_segment->bitmap)
   {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "cur value == new value -> no update");
     return;
@@ -175,7 +230,7 @@ static void next_animation(struct segment* cur_segment, PropertyAnimation* cur_a
           cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_MED_DIGIT_BLANK);
           break;
         case 20://SMALL
-          //cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_SML_DIGIT_BLANK);
+          cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_SML_DIGIT_BLANK);
           break;
         case 30://Day of week
           //cur_segment->bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMG_DOW_BLANK);
@@ -260,12 +315,38 @@ static void update_datetime_display(struct tm *current_time) {
 
   //***********************DATE****************************************
   //DOW
+  dow_segment.layer=dow_bitmap_layer;
+  dow_segment.new_value=current_time->tm_wday;
+  dow_segment.index_shift=30;
+  dow_segment.cur_anim_stage=0;
+  next_animation(&dow_segment, dow_animation);
 
 
   //Month
+  DATE_SEGMENTS[0].layer=DATE_BITMAP_LAYERS[0];
+  DATE_SEGMENTS[0].new_value=(current_time->tm_mon + 1) / 10;
+  DATE_SEGMENTS[0].index_shift=20;
+  DATE_SEGMENTS[0].cur_anim_stage=0;
+  next_animation(&DATE_SEGMENTS[0], DATE_ANIMATIONS[0]);
 
+  DATE_SEGMENTS[1].layer=DATE_BITMAP_LAYERS[1];
+  DATE_SEGMENTS[1].new_value=(current_time->tm_mon + 1) % 10;
+  DATE_SEGMENTS[1].index_shift=20;
+  DATE_SEGMENTS[1].cur_anim_stage=0;
+  next_animation(&DATE_SEGMENTS[1], DATE_ANIMATIONS[1]);
 
   //Day
+  DATE_SEGMENTS[2].layer=DATE_BITMAP_LAYERS[2];
+  DATE_SEGMENTS[2].new_value=current_time->tm_mday / 10;
+  DATE_SEGMENTS[2].index_shift=20;
+  DATE_SEGMENTS[2].cur_anim_stage=0;
+  next_animation(&DATE_SEGMENTS[2], DATE_ANIMATIONS[2]);
+
+  DATE_SEGMENTS[3].layer=DATE_BITMAP_LAYERS[3];
+  DATE_SEGMENTS[3].new_value=current_time->tm_mday % 10;
+  DATE_SEGMENTS[3].index_shift=20;
+  DATE_SEGMENTS[3].cur_anim_stage=0;
+  next_animation(&DATE_SEGMENTS[3], DATE_ANIMATIONS[3]);
 
 }
 
@@ -324,16 +405,27 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
   //setup the digit coordinates
-  TIME_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(1,5,71,75));
-  TIME_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(72,5,71,75));
-  TIME_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(41,87,52,75));
-  TIME_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(90,87,52,75));
+  //time
+  TIME_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(1,6,71,75));
+  TIME_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(72,6,71,75));
+  TIME_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(41,88,52,75));
+  TIME_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(90,88,52,75));
+  //date
+  DATE_BITMAP_LAYERS[0] = bitmap_layer_create(GRect(8,110,9,11));
+  DATE_BITMAP_LAYERS[1] = bitmap_layer_create(GRect(17,110,9,11));
+  DATE_BITMAP_LAYERS[2] = bitmap_layer_create(GRect(21,123,9,11));
+  DATE_BITMAP_LAYERS[3] = bitmap_layer_create(GRect(30,123,9,11));
+  //dow
+  dow_bitmap_layer = bitmap_layer_create(GRect(8,93,33,15));
 
   //add all layers to window
-  layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[0]));
-  layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[1]));
-  layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[2]));
-  layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[3]));
+  for (int i = 0; i < 4; i++){
+    layer_add_child(window_layer, bitmap_layer_get_layer(TIME_BITMAP_LAYERS[i]));
+  }
+  for (int i = 0; i < 4; i++){
+    layer_add_child(window_layer, bitmap_layer_get_layer(DATE_BITMAP_LAYERS[i]));
+  }
+  layer_add_child(window_layer, bitmap_layer_get_layer(dow_bitmap_layer));
 
   // Avoids a blank screen on watch start.
   time_t now = time(NULL);
@@ -348,10 +440,14 @@ static void main_window_load(Window *window) {
 }
 
 static void main_window_unload(Window *window) {
-  // Destroy InverterLayer
+  // Destroy
   for (int i = 0; i < 4; i++)
   {
     bitmap_layer_destroy(TIME_BITMAP_LAYERS[i]);
+  }
+  for (int i = 0; i < 4; i++)
+  {
+    bitmap_layer_destroy(DATE_BITMAP_LAYERS[i]);
   }
 }
 
