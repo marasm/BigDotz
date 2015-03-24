@@ -14,8 +14,8 @@
 #define ANIM_DELAY 5
 
 //the below 2 lines disable logging
-// #undef APP_LOG
-// #define APP_LOG(...)
+#undef APP_LOG
+#define APP_LOG(...)
 
 #ifdef PBL_COLOR
 static const bool is_color_supported = 1;
