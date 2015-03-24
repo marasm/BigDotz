@@ -459,15 +459,27 @@ static void main_window_load(Window *window) {
 }
 
 static void main_window_unload(Window *window) {
-  // Destroy
+  //unsubscribe from services
+  tick_timer_service_unsubscribe();
+  battery_state_service_unsubscribe();
+  bluetooth_connection_service_unsubscribe();
+
+  //destroy bitmaps
+  gbitmap_destroy(dow_segment.bitmap);
+  gbitmap_destroy(battery_bitmap);
+
+  // Destroy layers
   for (int i = 0; i < 4; i++)
   {
+    //Time
+    gbitmap_destroy(TIME_SEGMENTS[i].bitmap);
     bitmap_layer_destroy(TIME_BITMAP_LAYERS[i]);
-  }
-  for (int i = 0; i < 4; i++)
-  {
+    //Date
+    gbitmap_destroy(DATE_SEGMENTS[i].bitmap);
     bitmap_layer_destroy(DATE_BITMAP_LAYERS[i]);
   }
+  bitmap_layer_destroy(dow_bitmap_layer);
+  bitmap_layer_destroy(battery_bitmap_layer);
 }
 
 static void init(void) {
