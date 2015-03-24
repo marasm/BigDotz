@@ -1,14 +1,10 @@
 /*
  * main.c
- * Creates a Window, InverterLayer and animates it around the screen
- * from corner to corner. It uses the `.stopped` callback to schedule the
- * next stage of the animation.
+ *
+ * Animated watchface using dots to display time and date
  */
 
 #include <pebble.h>
-
-#define BOX_SIZE 20
-#define TITLE_BAR_SIZE 16
 
 #define ANIM_DURATION 75
 #define ANIM_DELAY 5
