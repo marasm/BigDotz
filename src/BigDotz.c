@@ -150,8 +150,8 @@ static const uint32_t BATTERY[] = {
   RESOURCE_ID_IMG_BAT_80,
   RESOURCE_ID_IMG_BAT_80,
   RESOURCE_ID_IMG_BAT_100,
-  RESOURCE_ID_IMG_BAT_100,
-};
+  RESOURCE_ID_IMG_BAT_100
+}; 
 
 typedef struct segment segment;
 struct segment{
