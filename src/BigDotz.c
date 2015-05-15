@@ -143,6 +143,7 @@ static const uint32_t DIGITS_DARKEST[] = {
 static const uint32_t BATTERY[] = {
   RESOURCE_ID_IMG_BAT_0,
   RESOURCE_ID_IMG_BAT_20,
+  RESOURCE_ID_IMG_BAT_20,
   RESOURCE_ID_IMG_BAT_40,
   RESOURCE_ID_IMG_BAT_40,
   RESOURCE_ID_IMG_BAT_60,
@@ -151,7 +152,7 @@ static const uint32_t BATTERY[] = {
   RESOURCE_ID_IMG_BAT_80,
   RESOURCE_ID_IMG_BAT_100,
   RESOURCE_ID_IMG_BAT_100
-}; 
+};
 
 typedef struct segment segment;
 struct segment{
